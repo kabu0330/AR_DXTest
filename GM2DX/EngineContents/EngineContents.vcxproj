@@ -190,6 +190,18 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="TestActor.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="TestLevel.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="TestRenderer.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="TitleHUD.h">
       <SubType>
       </SubType>
@@ -226,6 +238,18 @@
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Monster2.cpp" />
     <ClCompile Include="MyCustomRenderer.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="TestActor.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="TestLevel.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="TestRenderer.cpp">
       <SubType>
       </SubType>
     </ClCompile>

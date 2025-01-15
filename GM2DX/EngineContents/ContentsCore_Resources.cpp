@@ -89,5 +89,10 @@ void UContentsCore::MyGSetting()
 		Mat->SetRasterizerState("CollisionDebugRas");
 	}
 
+	{
+		std::shared_ptr<UEngineMaterial> Mat = UEngineMaterial::Create("MyTestMaterial");
+		Mat->SetVertexShader("TestTestShader.fx");
+		Mat->SetPixelShader("TestTestShader.fx");
+	}
 
 }

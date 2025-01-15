@@ -169,6 +169,90 @@ void UEngineGraphicDevice::MeshInit()
 		UEngineVertexBuffer::Create("FullRect", Vertexs);
 	}
 
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	{
+		std::vector<FEngineVertex> Vertexs;
+		Vertexs.resize(24);
+
+		FVector Red = { 1.0f, 0.0f, 0.0f, 1.0f };
+		FVector Magenta = { 1.0f, 0.0f, 1.0f, 1.0f };
+		FVector Yellow = { 1.0f, 1.0f, 0.0f, 1.0f };
+		FVector Green = { 0.0f, 1.0f, 0.0f, 1.0f };
+		Vertexs[0] = FEngineVertex{ FVector(0.0f, 0.0f, 0.5f), {0.0f , 0.0f }, Red };
+		Vertexs[1] = FEngineVertex{ FVector(-0.5f, 0.0f, 0.0f), {1.0f , 0.0f } , Red };
+		Vertexs[2] = FEngineVertex{ FVector(0.0f, 0.5f, 0.0f), {0.0f , 1.0f } , Red };
+
+		Vertexs[3] = FEngineVertex{ FVector(0.0f, 0.0f, 0.5f), {1.0f , 1.0f } , Magenta };
+		Vertexs[4] = FEngineVertex{ FVector(0.0f, 0.5f, 0.0f), {1.0f , 1.0f } , Magenta };
+		Vertexs[5] = FEngineVertex{ FVector(0.5f, 0.0f, 0.0f), {1.0f , 1.0f } , Magenta };
+
+		Vertexs[6] = FEngineVertex{ FVector(0.0f, 0.0f, 0.5f), {1.0f , 1.0f } , Green };
+		Vertexs[7] = FEngineVertex{ FVector(0.5f, 0.0f, 0.0f), {1.0f , 1.0f } , Green };
+		Vertexs[8] = FEngineVertex{ FVector(0.0f, -0.5f, 0.0f), {1.0f , 1.0f } , Green };
+
+		Vertexs[9]  = FEngineVertex{ FVector(0.0f, 0.0f, 0.5f), {1.0f , 1.0f } ,  Yellow };
+		Vertexs[10] = FEngineVertex{ FVector(0.0f, -0.5f, 0.0f), {1.0f , 1.0f } , Yellow };
+		Vertexs[11] = FEngineVertex{ FVector(-0.5f, 0.0f, 0.0f), {1.0f , 1.0f } , Yellow };
+
+		// 뒷면
+		Vertexs[12] = FEngineVertex{ FVector(0.0f, 0.0f, -0.5f), {0.0f , 0.0f }, Magenta };
+		Vertexs[13] = FEngineVertex{ FVector(-0.5f, 0.0f, 0.0f), {1.0f , 0.0f } , Magenta };
+		Vertexs[14] = FEngineVertex{ FVector(0.0f, 0.5f, 0.0f), {0.0f , 1.0f } , Magenta };
+	
+		Vertexs[15] = FEngineVertex{ FVector(0.0f, 0.0f, -0.5f), {1.0f , 1.0f } , Red };
+		Vertexs[16] = FEngineVertex{ FVector(0.0f, 0.5f, 0.0f), {1.0f , 1.0f } , Red };
+		Vertexs[17] = FEngineVertex{ FVector(0.5f, 0.0f, 0.0f), {1.0f , 1.0f } , Red };
+
+		Vertexs[18] = FEngineVertex{ FVector(0.0f, 0.0f, -0.5f), {1.0f , 1.0f } , Yellow };
+		Vertexs[19] = FEngineVertex{ FVector(0.5f, 0.0f, 0.0f), {1.0f , 1.0f } , Yellow };
+		Vertexs[20] = FEngineVertex{ FVector(0.0f, -0.5f, 0.0f), {1.0f , 1.0f } , Yellow };
+
+		Vertexs[21] = FEngineVertex{ FVector(0.0f, 0.0f, -0.5f), {1.0f , 1.0f } , Green };
+		Vertexs[22] = FEngineVertex{ FVector(0.0f, -0.5f, 0.0f), {1.0f , 1.0f } , Green };
+		Vertexs[23] = FEngineVertex{ FVector(-0.5f, 0.0f, 0.0f), {1.0f , 1.0f } , Green };
+
+		
+		UEngineVertexBuffer::Create("TestMesh", Vertexs);
+	}
+
+	{
+		std::vector<unsigned int> Indexs;
+
+		Indexs.push_back(0);
+		Indexs.push_back(1);
+		Indexs.push_back(2);
+
+		Indexs.push_back(3);
+		Indexs.push_back(4);
+		Indexs.push_back(5);
+
+		Indexs.push_back(6);
+		Indexs.push_back(7);
+		Indexs.push_back(8);
+
+		Indexs.push_back(9);
+		Indexs.push_back(10);
+		Indexs.push_back(11);
+
+		Indexs.push_back(12);
+		Indexs.push_back(13);
+		Indexs.push_back(14);
+
+		Indexs.push_back(15);
+		Indexs.push_back(16);
+		Indexs.push_back(17);
+
+		Indexs.push_back(18);
+		Indexs.push_back(19);
+		Indexs.push_back(20);
+
+		Indexs.push_back(21);
+		Indexs.push_back(22);
+		Indexs.push_back(23);
+		UEngineIndexBuffer::Create("TestMesh", Indexs);
+	}
+	UMesh::Create("TestMesh");
+
 	{
 		UMesh::Create("Rect");
 		// FullRect 포스트프로세싱용 화면 전체크기 만한 매쉬를 제작.
